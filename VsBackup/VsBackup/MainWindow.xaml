@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VsBackup"
         mc:Ignorable="d"
-        Title="VsBackup" Height="350" Width="525">
+        Title="VsBackup" Height="411" Width="599">
     <Grid>
-        
+        <Image HorizontalAlignment="Left" Source="Logo.png" Height="67" Margin="481,32,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.57,0.761"/>
+
+        <TabControl HorizontalAlignment="Left" Height="255" Margin="10,115,0,0" VerticalAlignment="Top" Width="571">
+            <TabItem Header="Monitor">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Configurações">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="76,12,0,0" TextWrapping="Wrap" Text="{Binding Descricao}" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,15,0,0" TextWrapping="Wrap" Text="Descrição:" VerticalAlignment="Top" Width="61"/>
+                    
+                    <TextBlock HorizontalAlignment="Left" Margin="210,15,0,0" TextWrapping="Wrap" Text="Nome do Arquivo:" VerticalAlignment="Top" Width="110"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="325,12,0,0" TextWrapping="Wrap" Text="{Binding Descricao}" VerticalAlignment="Top" Width="165"/>
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+        <ListView HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="463">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Código" Width="50" DisplayMemberBinding="{Binding Nome}"/>
+                    <GridViewColumn Header="Descrição" Width="100" DisplayMemberBinding="{Binding Telefone}"/>
+                    <GridViewColumn Header="Caminho" Width="300" DisplayMemberBinding="{Binding Endereco}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
     </Grid>
 </Window>
